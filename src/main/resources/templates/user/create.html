@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<p>CRUD Create</p>
+<p><a href="/select">CRUD Select</a></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user, iterStat : ${users}" th:style="${iterStat.odd}? 'font-weight: bold;'">
+        <td th:text="${user.getId()}"></td>
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getAge()}"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<form th:method="post" th:object="${user}">
+
+
+    <label for="name">Name</label>
+    <input id="name" th:field="*{name}" type="text"/>
+
+    <br>
+
+    <label for="age">Age</label>
+    <input th:field="*{age}" type="text" id="age"/>
+
+    <br>
+
+    <input type="submit" value="create user"/>
+
+</form>
+</body>
+</html>
