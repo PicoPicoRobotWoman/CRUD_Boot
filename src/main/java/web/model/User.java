@@ -29,9 +29,10 @@ public class User {
 
     }
 
-    public User(String name, Integer age) {
+    public User(String name, Integer age, String email) {
         this.name = name;
         this.age = age;
+        this.email = email;
     }
 
     public void setId(Long id) { this.id = id; }
