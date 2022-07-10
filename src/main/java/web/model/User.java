@@ -22,6 +22,9 @@ public class User {
     @Column(name = "age")
     private Integer age;
 
+    @Column(name = "email")
+    private String email;
+
     public User() {
 
     }
@@ -39,4 +42,7 @@ public class User {
 
     public void setAge(Integer age) { this.age = age; }
     public Integer getAge() { return age; }
+
+    public void setEmail(String email) { this.email = email; }
+    public String getEmail() { return email; }
 }
